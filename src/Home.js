@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Avatar from '@mui/material/Avatar'
+import yona from './images/yona.png'
+import honeybee from './images/honeybee.png'
 
 // import AvatarGroup from '@mui/material/AvatarGroup'
 
@@ -11,7 +13,7 @@ export default class Home extends Component {
         <center>
           <Avatar
             alt="Yona"
-            src="/src/images/yona.png"
+            src={yona}
             sx={{ width: 400, height: 400 }}
             
            
@@ -19,7 +21,7 @@ export default class Home extends Component {
 
           <Avatar
             alt="Honeybee"
-            src="/src/images/honeybee.png"
+            src={honeybee}
             sx={{ width: 400, height: 400 }}
             
            

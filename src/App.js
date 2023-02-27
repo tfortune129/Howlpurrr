@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Routes, Route } from'react-router-dom'
+import Adopt from './Adopt'
 import Home from './Home'
 import Myprofile from './Myprofile'
 import Nav from './Nav'
 import Pet from './Pet'
 import Signin from './Signin'
 import Signup from './Signup'
+import './style.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 export default class App extends Component {
   render() {
@@ -14,6 +18,7 @@ export default class App extends Component {
 
       <BrowserRouter>
       <div>
+
         <Nav></Nav>
         <Routes>
 
@@ -22,6 +27,7 @@ export default class App extends Component {
           <Route path="/me" element={<Myprofile />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/adopt" element={<Adopt />} />
 
 
         </Routes>

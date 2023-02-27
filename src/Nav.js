@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import './style.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaw } from '@fortawesome/free-solid-svg-icons'
+// import { faEllo } from '@fortawesome/free-solid-svg-icons'
 
 
 export default class Nav extends Component {
@@ -24,15 +27,25 @@ export default class Nav extends Component {
             <a className="dropdown-item text-white" href="/">home</a>
             <a className="dropdown-item text-white" href="/pet">pet profile</a>
             <a className="dropdown-item text-white" href="/me">my profile</a>
+            <a className="dropdown-item text-white" href="/adopt">adopt</a>
             <a className="dropdown-item text-white" href="signin">sign in</a>
             <a className="dropdown-item text-white" href="signup">sign up</a>
+            
           </div>
         </div>
-        <nav className="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-dark" id='navcolor'>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
+            {/* <span className="navbar-toggler-icon"></span> */}
+            <a>
+              <p>hey, click me </p>
+            {/* <FontAwesomeIcon icon={faEllo} /> */}
+            <FontAwesomeIcon icon="fa-brands fa-ello" />
+            </a>
           </button>
-         
+          
+          <a className="navbar-brand mx-auto" href="#">howlpurrr (helper)<FontAwesomeIcon icon={faPaw} /></a>
+      
+          
         </nav>
       </div>
       
