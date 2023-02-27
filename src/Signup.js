@@ -5,12 +5,16 @@ export default class Signup extends Component {
     return (
     
             <center>
+                <h1>sign up</h1>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <form className="form-inline">
                 {/*put this after inline" ^^ onSubmit={handleSubmit}> */}
                 
                 <div className="form-group mx-sm-3 mb-2">
-                    <input type="name" className="form-control" placeholder="Full Name" style={{width: "300px"}} />
+                    <input type="name" className="form-control" placeholder="First Name" style={{width: "300px"}} />
+                </div>
+                <div className="form-group mx-sm-3 mb-2">
+                    <input type="name" className="form-control" placeholder="Last Name" style={{width: "300px"}} />
                 </div>
                 <div className="form-group mx-sm-3 mb-2">
                     <input type="email" className="form-control" placeholder="Email" style={{width: "300px"}} />
@@ -21,7 +25,10 @@ export default class Signup extends Component {
                 <div className="form-group mx-sm-3 mb-2">
                     <input type="password" className="form-control" placeholder="Confirm Password" style={{width: "300px"}} />
                 </div>
-                <button type="submit" className="btn btn-primary mb-2">Submit</button>
+                &nbsp;&nbsp;&nbsp;
+                <div>
+                <button type="submit" className="btn btn-primary mb-2">Done</button>
+                </div>
                 </form>
         </center>
         

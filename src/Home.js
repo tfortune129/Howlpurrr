@@ -12,21 +12,22 @@ export default class Home extends Component {
     return (
         <center>
             &nbsp;&nbsp;&nbsp;&nbsp;
-          <Avatar
+          <a href='/pet'><Avatar
             alt="Yona"
             src={yona}
             sx={{ width: 400, height: 400 }}
             
            
-          />
+          /> </a>
+          
             &nbsp;&nbsp;&nbsp;
-          <Avatar
+          <a href='/pet'><Avatar
             alt="Honeybee"
             src={honeybee}
             sx={{ width: 400, height: 400 }}
             
            
-          />
+          /></a>
 
      </center>
 

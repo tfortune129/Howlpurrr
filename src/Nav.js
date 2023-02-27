@@ -31,14 +31,14 @@ export default class Nav extends Component {
             
             <a>
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <p id='toggletext'>hey, click me </p>
+              <p id='toggletext'>hey, click me? </p>
               {/* <FontAwesomeIcon icon={faEllo} /> */}
               <FontAwesomeIcon icon="fa-brands fa-ello" />
             </a>
 
           </button>
           
-          <a className="navbar-brand mx-auto" href="#">howlpurrr (helper)<FontAwesomeIcon icon={faPaw} /></a>
+          <a className="navbar-brand" href="/">howlpurrr (helper)<FontAwesomeIcon icon={faPaw} className="ml-2"/></a>
       
           
         </nav>
