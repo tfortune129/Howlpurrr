@@ -8,7 +8,7 @@ import Pet from './Pet'
 import Signin from './Signin'
 import Signup from './Signup'
 import './style.css'
-import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 
 export default class App extends Component {

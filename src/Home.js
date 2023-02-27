@@ -11,6 +11,7 @@ export default class Home extends Component {
   render() {
     return (
         <center>
+            &nbsp;&nbsp;&nbsp;&nbsp;
           <Avatar
             alt="Yona"
             src={yona}
@@ -18,7 +19,7 @@ export default class Home extends Component {
             
            
           />
-
+            &nbsp;&nbsp;&nbsp;
           <Avatar
             alt="Honeybee"
             src={honeybee}

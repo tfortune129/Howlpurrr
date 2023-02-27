@@ -10,20 +10,11 @@ export default class Nav extends Component {
     return (
         <div className="pos-f-t">
         <div className="collapse" id="navbarToggleExternalContent">
-          <div className="bg-dark p-4">
+          <div className="bg-secondary p-4">
             <h4 className="text-white">welcome back!</h4>
             <span className="text-muted"></span>
             {/* make text muted names based on profile */}
             <div className="dropdown-divider mt-3"></div>
-            {/* <li className="nav-item active">
-              <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/pet">pet profile</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/me">my profile</Link>
-            </li> */}
             <a className="dropdown-item text-white" href="/">home</a>
             <a className="dropdown-item text-white" href="/pet">pet profile</a>
             <a className="dropdown-item text-white" href="/me">my profile</a>
@@ -33,14 +24,18 @@ export default class Nav extends Component {
             
           </div>
         </div>
-        <nav className="navbar navbar-dark bg-dark" id='navcolor'>
+
+
+        <nav className="navbar">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            {/* <span className="navbar-toggler-icon"></span> */}
+            
             <a>
-              <p>hey, click me </p>
-            {/* <FontAwesomeIcon icon={faEllo} /> */}
-            <FontAwesomeIcon icon="fa-brands fa-ello" />
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <p id='toggletext'>hey, click me </p>
+              {/* <FontAwesomeIcon icon={faEllo} /> */}
+              <FontAwesomeIcon icon="fa-brands fa-ello" />
             </a>
+
           </button>
           
           <a className="navbar-brand mx-auto" href="#">howlpurrr (helper)<FontAwesomeIcon icon={faPaw} /></a>
