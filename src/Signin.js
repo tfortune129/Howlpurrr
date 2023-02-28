@@ -1,4 +1,10 @@
 import React from 'react'
+import Checkbox from '@mui/material/Checkbox';
+
+
+
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
 
 export default function SignIn() {
 
@@ -52,10 +58,20 @@ export default function SignIn() {
             &nbsp;&nbsp;&nbsp;
             <div>
             <button type="submit" className="btn btn-primary">Enter</button>
-            <div className="form-check mb-2">
-                    <input type="checkbox" className="form-check-input" id="dropdownCheck"/>
+            
+            <div className="form-check mx-auto">
+                    {/* <Checkbox {...label} defaultChecked color="secondary" /> */}
+                    <Checkbox 
+                      sx={{
+                      color: "white",
+                      '&.Mui-checked': {
+                      color: "gray",
+                       },
+                     }}/>
+
                     <label className="form-check-label" htmlFor="dropdownCheck"><i>remember us</i></label>
-                </div>
+            </div>
+            
             </div>
             </form>
     </center>

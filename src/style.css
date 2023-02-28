@@ -7,6 +7,11 @@
   margin-left: 0px;
 }
 
+.form-check-input {
+  color: white;
+  margin-right: 0px !important;
+  padding: 0%;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 body {
