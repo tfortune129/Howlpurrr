@@ -15,3 +15,7 @@ class signinForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField()
+
+class petinfoForm(FlaskForm):
+    pet_name = StringField('Pet Name', validators=[DataRequired()])
+    # is this necessary?

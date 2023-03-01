@@ -6,8 +6,9 @@ export default class Pet extends Component {
     return (
       <div>
 
-
-        {/* <Calendar /> */}
+        {/* Add a pet here.... add a form to add a pet to the database
+        this is where the api for pet types will go */}
+        
 
 
       </div>
