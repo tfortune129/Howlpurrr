@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+// import { Calendar } from 'react-native-calendars'
 import { BrowserRouter, Routes, Route } from'react-router-dom'
-import Adopt from './Adopt'
 import Home from './Home'
 import Myprofile from './Myprofile'
 import Nav from './Nav'
 import Pet from './Pet'
 import Signin from './Signin'
 import Signup from './Signup'
+import Calendar from './Calendar'
 import './style.css'
 
 
@@ -27,7 +28,7 @@ export default class App extends Component {
           <Route path="/me" element={<Myprofile />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/adopt" element={<Adopt />} />
+          <Route path="/calendar" element={<Calendar />} />
 
 
         </Routes>
@@ -37,3 +38,4 @@ export default class App extends Component {
     )
   }
 }
+

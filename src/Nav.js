@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw } from '@fortawesome/free-solid-svg-icons'
-// import { faEllo } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 
 export default class Nav extends Component {
@@ -15,12 +15,12 @@ export default class Nav extends Component {
             <span className="text-muted"></span>
             {/* make text muted names based on profile */}
             <div className="dropdown-divider mt-3"></div>
-            <a className="dropdown-item text-white" href="/">home</a>
-            <a className="dropdown-item text-white" href="/pet">pet profile</a>
-            <a className="dropdown-item text-white" href="/me">my profile</a>
-            <a className="dropdown-item text-white" href="/adopt">adopt</a>
-            <a className="dropdown-item text-white" href="signin">sign in</a>
-            <a className="dropdown-item text-white" href="signup">sign up</a>
+            <Link className="dropdown-item text-white" to="/">home</Link>
+            <Link className="dropdown-item text-white" to="/pet">pet profile</Link>
+            <Link className="dropdown-item text-white" to="/calendar">calendar overview</Link>
+            <Link className="dropdown-item text-white" to="/me">my profile</Link>
+            <Link className="dropdown-item text-white" to="signin">sign in</Link>
+            <Link className="dropdown-item text-white" to="signup">sign up</Link>
             
           </div>
         </div>
@@ -32,7 +32,6 @@ export default class Nav extends Component {
             <a>
               &nbsp;&nbsp;&nbsp;&nbsp;
               <p id='toggletext'>hey, click me? </p>
-              {/* <FontAwesomeIcon icon={faEllo} /> */}
               <FontAwesomeIcon icon="fa-brands fa-ello" />
             </a>
 
