@@ -2,6 +2,45 @@ import React, { Component } from 'react'
 
 export default class Signup extends Component {
   render() {
+    
+    
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const name = e.target.name.value;
+    //     const email = e.target.email.value;
+    //     const password = e.target.password.value;
+    //     const confirmPassword = e.target.confirmPassword.value;
+
+    //     const reqBody = {
+    //         name: name,
+    //         email: email,
+    //         password: password
+
+    //     }
+
+    //     const url = 'http://localhost:5000/api/signup'
+    //     const options = {
+    //         method: "POST",
+    //         body: JSON.stringify(reqBody),
+    //         headers: {
+    //             "Content-Type": 'application/json'
+    //         }
+    //     };
+
+    //     if (password!= confirmPassword) {
+    //         console.log('Passwords do not match')
+    //     }
+
+    //     const res = await fetch(url, options);
+    //     const data = await res.json();
+    //     console.log(data)
+
+
+    // };   
+
+
+
+
     return (
     
             <center>
