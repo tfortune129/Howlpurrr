@@ -70,6 +70,9 @@ export default function SignIn() {
                      }}/>
 
                     <label className="form-check-label" htmlFor="dropdownCheck"><i>remember us</i></label>
+              <a class="dropdown-item" href="/signup">new to this? sign up!</a>
+              <a class="dropdown-item" href="#">forgot password?</a>
+              {/* figure out how to make forget password to work */}
             </div>
             
             </div>

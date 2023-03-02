@@ -5,12 +5,25 @@ import { faPaw } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 
+
+
 export default class Nav extends Component {
+  state = {
+    collapsed: true,
+
+  };
+  
+  handleClick = () => {
+     this.setState({collapsed: !this.state.collapsed});
+
+
+  }
+
   render() {
     return (
         <div className="pos-f-t">
-        <div className="collapse" id="navbarToggleExternalContent">
-          <div className="bg-secondary p-4">
+        <div className={this.state.collapsed?'collapse': 'collapse show'} id="navbarToggleExternalContent">  
+          <div className="bg-secondary p-4" onClick={this.handleClick}>
             <h4 className="text-white">welcome back!</h4>
             <span className="text-muted"></span>
             {/* make text muted names based on profile */}

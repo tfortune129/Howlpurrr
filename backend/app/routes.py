@@ -1,27 +1,38 @@
 from app import app
-from flask import render_template, request, redirect, url_for
-from .forms import signupForm
+from flask import request
+from .models import User
 
 
-
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup', methods=['POST'])
 def signUp():
-    form = signupForm()
-    print(request.method)
-    if request.method == 'POST':
+    # form = signupForm()
+    # get json information from react and save data to variable:
+    data = request.json
+    
         #  check to see if the user actually signed up:
-        if form.validate():
-            first_name = form.first_name.data
-            last_name = form.last_name.data
-            email = form.email.data
-            password = form.password.data
+    first_name = data['first_name']
+    last_name = data['last_name']
+    email = data['email']
+    password = data['password']
 
-            print(first_name, last_name, email, password)
+    user = User(first_name, last_name, email, password)
+   
+    user.saveToDB()
 
-            # add the user to database then redirect? with url_for()
+    return 'User created'
+# fix this^^
 
 
-    return render_template('signup.html', form = form)
+
+        # add the user to database then redirect? with url_for()
+
+
+    # return render_template('signup.html', form = form)
+
+# still need enpoints and api so react will be making requests to flask and ultimately ESQL
+# no need for get since react is frontend
+# still need to save to db etc
+
 
 
     

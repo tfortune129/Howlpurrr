@@ -35,7 +35,7 @@ class Pet(db.Model):
     pet_name = db.Column(db.String(45), nullable=False)
     birth_date = db.Column(db.DateTime, nullable=False)
     pet_type = db.Column(db.String(300), nullable=False)
-    pet_breed = db.Column(db.string(300))
+    pet_breed = db.Column(db.String(300))
     pet_weight = db.Column(db.Integer)
     pet_gender = db.Column(db.String(45), nullable=False)
     # unique_id would be the pet's unique quality
@@ -70,8 +70,10 @@ class Pet(db.Model):
     
     
     class Calendar(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
         pass
 
     class daily_input(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
         pass
 
