@@ -60,3 +60,6 @@ export default class Nav extends Component {
     )
   }
 };
+
+
+// replace signup button with logout button

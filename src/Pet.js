@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
-// import { Calendar } from 'react-native-calendars'
+import OutlinedButtons from './components/OutlinedButtons';
 
 export default class Pet extends Component {
   render() {
+    // function addPet() {
+    //   const [hasPet, setHasPet] = useState(false);
+    
     return (
-      <div>
-
-        {/* Add a pet here.... add a form to add a pet to the database
-        this is where the api for pet types will go */}
+        <OutlinedButtons />
+       
+  
         
 
 
-      </div>
+    
     )
   }
 }

@@ -9,6 +9,7 @@ import Signin from './Signin'
 import Signup from './Signup'
 import Calendar from './Calendar'
 import './style.css'
+import Addpet from './Addpet'
 
 
 
@@ -29,6 +30,7 @@ export default class App extends Component {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/calendar" element={<Calendar />} />
+          <Route path="/addpet" element={<Addpet />} />
 
 
         </Routes>
