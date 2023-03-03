@@ -29,7 +29,7 @@ export default class Nav extends Component {
             {/* make text muted names based on profile */}
             <div className="dropdown-divider mt-3"></div>
             <Link className="dropdown-item text-white" to="/">home</Link>
-            <Link className="dropdown-item text-white" to="/pet">pet profile</Link>
+            <Link className="dropdown-item text-white" to="/pet">my pet's day to day</Link>
             <Link className="dropdown-item text-white" to="/calendar">calendar overview</Link>
             <Link className="dropdown-item text-white" to="/me">my profile</Link>
             <Link className="dropdown-item text-white" to="signin">sign in</Link>
