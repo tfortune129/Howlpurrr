@@ -1,5 +1,6 @@
 import React from 'react'
 import Checkbox from '@mui/material/Checkbox';
+import { Link } from 'react-router-dom';
 
 
 
@@ -69,9 +70,12 @@ export default function SignIn() {
                        },
                      }}/>
 
-                    <label className="form-check-label" htmlFor="dropdownCheck"><i>remember us</i></label>
-              <a class="dropdown-item" href="/signup">new to this? sign up!</a>
-              <a class="dropdown-item" href="#">forgot password?</a>
+           
+              <label className="form-check-label3" htmlFor="dropdownCheck"><i>remember us</i></label>
+              <a className="dropdown-item" href="/signup" style={{color: 'white'}}>new to this? sign up!</a>
+              <a className="dropdown-item" href="#" style={{color: 'white'}}>forgot password?</a>
+           
+
               {/* figure out how to make forget password to work */}
             </div>
             

@@ -13,14 +13,21 @@
   padding: 0%;
 }
 
-.form-check-label {
+.form-check-label2 {
   color: black;
+}
+
+.form-check-label3 {
+  color: white;
 }
 
 .dropdown-item {
   color: black;
 }
 
+.dropdown-menu {
+  color: black
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');

@@ -1,12 +1,39 @@
 import * as React from 'react';
 // import Button from '@mui/material/Button';
 // import Typography from '@mui/material/Typography';
-
-
+import { useState, useEffect } from "react"
 
 
 export default function OutlinedButtons() {
-  return (
+
+        // function BreedDropdown() {
+        //     const [petType, setPetType] = useState('');
+        //     const [breeds, setBreeds] = useState([]);
+
+        //     useEffect(() => {
+        //         const fetchDogBreeds = async () => {
+        //             const response = await fetch('https://dog.ceo/api/breeds/list/all');
+        //             const data = await response.json();
+        //             const breedNames = Object.keys(data.message);
+        //             setBreeds(breedNames);
+            
+
+        //         if (petType === 'dog') {
+        //             fetchDogBreeds()
+        //         } else{
+        //             setBreeds([])
+        //         }
+        //     }, [petType]);
+        //     const handlePetTypeChange = (event) => {
+        //         setPetType(event.target.value);
+
+        //     };
+                    
+
+        //     }}}
+
+
+    return (
 
     <div style={{ display: 'flex', justifyContent: 'center' }}>
 
@@ -65,19 +92,19 @@ export default function OutlinedButtons() {
                             <div className="form-check form-check-inline">
                             <input className="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
                                 value="option1" />
-                            <label className="form-check-label" for="femaleGender">female</label>
+                            <label className="form-check-label2" for="femaleGender">female</label>
                             </div>
 
                             <div className="form-check form-check-inline">
                             <input className="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
                                 value="option2" />
-                            <label className="form-check-label" for="maleGender">male</label>
+                            <label className="form-check-label2" for="maleGender">male</label>
                             </div>
 
                             <div className="form-check form-check-inline">
                             <input className="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
                                 value="option3" />
-                            <label className="form-check-label" for="otherGender">other</label>
+                            <label className="form-check-label2" for="otherGender">other</label>
                             </div>
                         </div>
 
@@ -93,7 +120,7 @@ export default function OutlinedButtons() {
                         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         what kind of pet do you have?
                         </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <div id='pettype' className="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button className="dropdown-item" type="button">bird</button>
                             <button className="dropdown-item" type="button">cat</button>
                             <button className="dropdown-item" type="button">dog</button>
@@ -116,15 +143,60 @@ export default function OutlinedButtons() {
                             </div>
                         </div> */}
 
-                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
                         <div className="dropdown">
                         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         breed <i>(if applicable)</i>?
                         </button>
+
                         <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button className="dropdown-item" type="button">Action</button>
                             <button className="dropdown-item" type="button">Another action</button>
                             <button className="dropdown-item" type="button">Something else here</button>
+
+{/* <label htmlFor="pet-type-dropdown">What kind of pet do you have?</label>
+      <select id="pet-type-dropdown" value={petType} onChange={handlePetTypeChange}>
+        <option value="">--Select a pet type--</option>
+        <option value="bird">Bird</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="farm-animal">Farm animal (not horse)</option>
+        <option value="ferret">Ferret</option>
+        <option value="fish">Fish</option>
+        <option value="guinea-pig">Guinea pig</option>
+        <option value="horse">Horse</option>
+        <option value="rabbit">Rabbit</option>
+        <option value="rat-mouse">Rat/mouse</option>
+        <option value="reptile">Reptile</option>
+      </select>
+
+      {petType === 'dog' &&
+        <div>
+          <label htmlFor="breed-dropdown">Select a breed:</label>
+          <select id="breed-dropdown">
+            {breeds.map((breed) => (
+              <option key={breed} value={breed}>{breed}</option>
+            ))}
+          </select>
+        </div>
+      }
+    </div>
+  ); */}
+
+                            
+                            
+{/* <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+        {breeds.map((breed) => (
+        <button
+            className="dropdown-item"
+            type="button"
+            key={breed}
+            onClick={() => props.onBreedSelected(breed)}>
+            {breed}
+        </button>
+        ))}
+    </div> */}
+
                         </div>
                         </div>
 
