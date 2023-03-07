@@ -33,7 +33,7 @@ class User(db.Model):
 class Pet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     pet_name = db.Column(db.String(45), nullable=False)
-    birth_date = db.Column(db.DateTime, nullable=False)
+    birth_date = db.Column(db.Date, nullable=False)
     pet_type = db.Column(db.String(300), nullable=False)
     pet_breed = db.Column(db.String(300))
     pet_weight = db.Column(db.Integer)
@@ -46,34 +46,90 @@ class Pet(db.Model):
     def __init__(self, pet_name, birth_date, pet_type, pet_breed, pet_weight, pet_gender, unique_id, user_id, pet_picture = None):
         self.pet_name = pet_name
         self.birth_date = birth_date
-        self.pet_type = pet_type
-        self.pet_breed = pet_breed
+        self.pet_type = self.pet_breed = pet_type
+        pet_breed
         self.pet_weight = pet_weight
         self.pet_gender = pet_gender
         self.unique_id = unique_id
         self.pet_picture = pet_picture
-        self.user_id = user_id
-
-        
+        self.user_id = user_id     
    
    # since i am trying to create a pet that ages over time, @property is used to specify that the property is a getter and not a setter
     @property
     def pet_age(self):
         days = (date.today() - self.birth_date).days
-        years = days // 365
-        months = (days % 365) // 30
-        return f"{years} years, {months} months"
+        if days < 30:
+            return f"{days} days"
+        elif days < 365:
+            return f"{days // 30} months"
+        else:
+            years = days // 365
+            months = (days % 365) // 30
+            return f"{years} years, {months} months"
+        
+        # to dict method to send to react
+        
+
+class Calendar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date_created = db.Column(db.Date, default=datetime.utcnow)
+    day_description = db.Column(db.String, nullable=True)
+    good_day = db.Column(db.Boolean, nullable=True)
+    pet_id = db.Column(db.Integer, db.ForeignKey('pet.id'), nullable=False)
+
+    def __init__(self, good_day, pet_id):
+        self.good_day = good_day
+        self.pet_id = pet_id
+
+
+    # query pet id and specify dates when querying
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    # @property
+    # def pet_age(self):
+    # days = (date.today() - self.birth_date).days
+    # if days < 365:
+    #     return f"{days // 30} months"
+    # else:
+    #     years = days // 365
+    #     months = (days % 365) // 30
+    #     return f"{years} years, {months} months"
+
+    
+    
+    
+    # @property
+    # def pet_age(self):
+    #     days = (date.today() - self.birth_date).days
+    #     years = days // 365
+    #     months = (days % 365) // 30
+    #     return f"{years} years, {months} months"
     
 
     
     
     
     
-    class Calendar(db.Model):
-        id = db.Column(db.Integer, primary_key=True)
-        pass
+ 
+        
 
-    class daily_input(db.Model):
-        id = db.Column(db.Integer, primary_key=True)
-        pass
+    # class daily_input(db.Model):
+    #     id = db.Column(db.Integer, primary_key=True)
+    #     pass
 

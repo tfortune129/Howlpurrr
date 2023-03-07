@@ -6,31 +6,7 @@ import { useState, useEffect } from "react"
 
 export default function OutlinedButtons() {
 
-        // function BreedDropdown() {
-        //     const [petType, setPetType] = useState('');
-        //     const [breeds, setBreeds] = useState([]);
-
-        //     useEffect(() => {
-        //         const fetchDogBreeds = async () => {
-        //             const response = await fetch('https://dog.ceo/api/breeds/list/all');
-        //             const data = await response.json();
-        //             const breedNames = Object.keys(data.message);
-        //             setBreeds(breedNames);
-            
-
-        //         if (petType === 'dog') {
-        //             fetchDogBreeds()
-        //         } else{
-        //             setBreeds([])
-        //         }
-        //     }, [petType]);
-        //     const handlePetTypeChange = (event) => {
-        //         setPetType(event.target.value);
-
-        //     };
-                    
-
-        //     }}}
+        
 
 
     return (
@@ -143,17 +119,6 @@ export default function OutlinedButtons() {
                             </div>
                         </div> */}
 
-                        &nbsp;&nbsp;&nbsp;
-                        <div className="dropdown">
-                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        breed <i>(if applicable)</i>?
-                        </button>
-
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button className="dropdown-item" type="button">Action</button>
-                            <button className="dropdown-item" type="button">Another action</button>
-                            <button className="dropdown-item" type="button">Something else here</button>
-
 {/* <label htmlFor="pet-type-dropdown">What kind of pet do you have?</label>
       <select id="pet-type-dropdown" value={petType} onChange={handlePetTypeChange}>
         <option value="">--Select a pet type--</option>
@@ -197,8 +162,8 @@ export default function OutlinedButtons() {
         ))}
     </div> */}
 
-                        </div>
-                        </div>
+                        
+                        
 
                         &nbsp;
                         <div className="form-group row">
