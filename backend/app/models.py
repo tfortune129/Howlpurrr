@@ -67,7 +67,7 @@ class Pet(db.Model):
             months = (days % 365) // 30
             return f"{years} years, {months} months"
         
-        # to dict method to send to react
+        # to dict method to send to react:
         
     def to_dict(self):
         return {

@@ -1,5 +1,5 @@
 from app import app
-from flask import request, jsonify, flash
+from flask import request, jsonify
 from .models import User, Pet, Calendar
 from flask_login import LoginManager, login_required, current_user, login_user
 
