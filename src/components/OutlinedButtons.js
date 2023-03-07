@@ -72,35 +72,7 @@ export default function OutlinedButtons() {
                             </div>
                         </div>
 
-
-                        {/* <div className="dropdown">
-                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        what kind of pet do you have?
-                        </button>
-                        <div id='pettype' className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button className="dropdown-item" type="button">bird</button>
-                            <button className="dropdown-item" type="button">cat</button>
-                            <button className="dropdown-item" type="button">dog</button>
-                            <button className="dropdown-item" type="button">farm animal (not horse)</button>
-                            <button className="dropdown-item" type="button">ferret</button>
-                            <button className="dropdown-item" type="button">fish</button>
-                            <button className="dropdown-item" type="button">guinea pig</button>
-                            <button className="dropdown-item" type="button">horse</button>
-                            <button className="dropdown-item" type="button">rabbit</button>
-                            <button className="dropdown-item" type="button">rat/mouse</button>
-                            <button className="dropdown-item" type="button">reptile</button>
-                        </div>
-                        </div> */}
-
                         <Breeddropdown />
-
-                        {/* <div className="form-group row">
-                            <label for="inputpetbreed" className="col-form-label"><b>breed?</b></label>
-                            <div className="col-sm-12">
-                            <input type="input2" className="form-control" id="inputpetbreed" placeholder=""/>
-                            </div>
-                        </div> */}
-
                         
                         &nbsp;
                         <div className="form-group row">

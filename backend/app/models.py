@@ -15,7 +15,7 @@ class User(db.Model):
     password = db.Column(db.String, nullable=False)
     profile_picture = db.Column(db.String)
     # this is assuming that i'll be storing a file path or URL to user's profile picture (blueprint?)
-    pet = db.relationship('Pet', backref='pet_name', lazy='True')
+    pet = db.relationship('Pet', backref='pet', lazy=True)
 
     # when you wan to instantiate a new user, you should pass in all the variables you want to instant:    
     def __init__(self, first_name, last_name, email, password, profile_picture = None):
@@ -46,8 +46,8 @@ class Pet(db.Model):
     def __init__(self, pet_name, birth_date, pet_type, pet_breed, pet_weight, pet_gender, unique_id, user_id, pet_picture = None):
         self.pet_name = pet_name
         self.birth_date = birth_date
-        self.pet_type = self.pet_breed = pet_type
-        pet_breed
+        self.pet_type = pet_type
+        self.pet_breed = pet_breed
         self.pet_weight = pet_weight
         self.pet_gender = pet_gender
         self.unique_id = unique_id
@@ -69,6 +69,19 @@ class Pet(db.Model):
         
         # to dict method to send to react
         
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'pet_name': self.pet_name,
+            'birth_date': self.birth_date,
+            'pet_type': self.pet_type,
+            'pet_breed': self.pet_breed,
+            'pet_weight': self.pet_weight,
+            'pet_gender': self.pet_gender,
+            'unique_id': self.unique_id,
+            'pet_picture': self.pet_picture,
+            'user_id': self.user_id,
+        }
 
 class Calendar(db.Model):
     id = db.Column(db.Integer, primary_key=True)

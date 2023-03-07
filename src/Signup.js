@@ -56,6 +56,7 @@ export default class Signup extends Component {
                     <input type="name" className="form-control" placeholder="Last Name" style={{width: "300px"}} />
                 </div>
                 <div className="form-group mx-sm-3 mb-2">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <input type="email" className="form-control" placeholder="Email" style={{width: "300px"}} />
                 </div>
                 <div className="form-group mx-sm-3 mb-2">

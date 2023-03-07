@@ -44,6 +44,7 @@ export default function BreedDropdown() {
         <select className="form-select" onChange={handlePetTypeChange} value={petType}>
 
                 <option value="">select pet type</option>
+                <option value="bird">bird</option>
                 <option value="cat">cat</option>
                 <option value="dog">dog</option>
                 <option value="farm animal">farm animal (not horse)</option>
