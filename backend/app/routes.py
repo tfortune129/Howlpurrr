@@ -20,7 +20,8 @@ def signUp():
    
     user.saveToDB()
 
-    return flash('User created successfully')
+    return jsonify({'message': 'User created successfully'})
+
 
 
 
@@ -77,7 +78,8 @@ def petSignUp():
 
     pet.saveToDB()
 
-    return flash('Pet profile created successfully')
+    return jsonify({'message': 'Pet created successfully'})
+
 
 
 
@@ -94,7 +96,8 @@ def petCalendar():
 
     calendar.saveToDB()
 
-    return {}
+    return jsonify({'message': 'Pet calendar started successfully'})
+
 
 
 # @app.route('/goodday', methods=['GET'])

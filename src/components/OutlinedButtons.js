@@ -1,26 +1,14 @@
 import * as React from 'react';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
-import { useState, useEffect } from "react"
+import Breeddropdown from './Breeddropdown';
 
 
 export default function OutlinedButtons() {
 
         
 
-
     return (
 
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-
-
-      {/* <Button variant="outlined" size='large' href="/addpet">
-        <Typography variant="body1" style={{ fontFamily: "'Roboto Mono', monospace" }}>
-
-        add a new pet
-
-        </Typography>
-      </Button> */}
 
 
             <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
@@ -85,14 +73,7 @@ export default function OutlinedButtons() {
                         </div>
 
 
-                        {/* <div className="form-group row">
-                            <label for="inputpettype" className="col-form-label"><b>what kind of pet do you have?</b></label>
-                            <div className="col-sm-12">
-                            <input type="input2" className="form-control" id="inputpettype" placeholder=""/>
-                            </div>
-                        </div> */}
-                        
-                        <div className="dropdown">
+                        {/* <div className="dropdown">
                         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         what kind of pet do you have?
                         </button>
@@ -101,7 +82,6 @@ export default function OutlinedButtons() {
                             <button className="dropdown-item" type="button">cat</button>
                             <button className="dropdown-item" type="button">dog</button>
                             <button className="dropdown-item" type="button">farm animal (not horse)</button>
-                            {/* add actual animals for farm animals */}
                             <button className="dropdown-item" type="button">ferret</button>
                             <button className="dropdown-item" type="button">fish</button>
                             <button className="dropdown-item" type="button">guinea pig</button>
@@ -110,7 +90,9 @@ export default function OutlinedButtons() {
                             <button className="dropdown-item" type="button">rat/mouse</button>
                             <button className="dropdown-item" type="button">reptile</button>
                         </div>
-                        </div>
+                        </div> */}
+
+                        <Breeddropdown />
 
                         {/* <div className="form-group row">
                             <label for="inputpetbreed" className="col-form-label"><b>breed?</b></label>
@@ -119,52 +101,7 @@ export default function OutlinedButtons() {
                             </div>
                         </div> */}
 
-{/* <label htmlFor="pet-type-dropdown">What kind of pet do you have?</label>
-      <select id="pet-type-dropdown" value={petType} onChange={handlePetTypeChange}>
-        <option value="">--Select a pet type--</option>
-        <option value="bird">Bird</option>
-        <option value="cat">Cat</option>
-        <option value="dog">Dog</option>
-        <option value="farm-animal">Farm animal (not horse)</option>
-        <option value="ferret">Ferret</option>
-        <option value="fish">Fish</option>
-        <option value="guinea-pig">Guinea pig</option>
-        <option value="horse">Horse</option>
-        <option value="rabbit">Rabbit</option>
-        <option value="rat-mouse">Rat/mouse</option>
-        <option value="reptile">Reptile</option>
-      </select>
-
-      {petType === 'dog' &&
-        <div>
-          <label htmlFor="breed-dropdown">Select a breed:</label>
-          <select id="breed-dropdown">
-            {breeds.map((breed) => (
-              <option key={breed} value={breed}>{breed}</option>
-            ))}
-          </select>
-        </div>
-      }
-    </div>
-  ); */}
-
-                            
-                            
-{/* <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-        {breeds.map((breed) => (
-        <button
-            className="dropdown-item"
-            type="button"
-            key={breed}
-            onClick={() => props.onBreedSelected(breed)}>
-            {breed}
-        </button>
-        ))}
-    </div> */}
-
                         
-                        
-
                         &nbsp;
                         <div className="form-group row">
                             <label for="inputpetname" className="col-form-label"><b>one word that describes your pet <i>(optional):</i></b></label>
