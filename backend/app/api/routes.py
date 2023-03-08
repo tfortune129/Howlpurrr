@@ -2,12 +2,14 @@ from flask import Blueprint
 from ..models import Pet, User
 from flask import request
 from flask_cors import cross_origin
-from flask_httpauth import HTTPBasicAuth
+from flask_httpauth import HTTPBasicAuth, HTTPTokenAuth
+
 
 
 
 api = Blueprint('api', __name__)
 basic_auth = HTTPBasicAuth()
+token_auth = HTTPTokenAuth()
 
 @basic_auth.verify_password
 def verify_password(email, password):
@@ -15,6 +17,13 @@ def verify_password(email, password):
     if user:
             if password == user.password:
                  return user
+            
+@token_auth.verify_token
+def verify_token(token):
+    user = User.query.filter_by(apitoken=token).first()
+    if user:
+        return user
+
             
 
 @api.route('/api/signup', methods=['POST'])
@@ -49,8 +58,10 @@ def getToken():
 
 
 @api.route('/api/pet', methods=['POST'])
+@token_auth.login_required
 def getPet():
     data = request.json
+    current_user = token_auth.current_user()
 
     pet_name = data['pet_name']
     birth_date = data['birth_date']
@@ -61,7 +72,8 @@ def getPet():
     unique_id = data['unique_id']
     pet_picture = data['pet_picture']
 
-    pet = Pet(pet_name, birth_date, pet_weight, pet_gender, pet_type, pet_breed, unique_id, pet_picture)
+
+    pet = Pet(pet_name, birth_date, pet_type, pet_breed, pet_weight, pet_gender, unique_id, current_user.id, pet_picture)
     
     pet.saveToDB()
 
@@ -73,8 +85,7 @@ def getPet():
         
         'status': 'ok',
         'message': 'Pet successfully created',
-        'pet': [p.to_dict() for p in pet],
-        'total pets': len(pet)       
+        'pet': pet.to_dict(),    
     }
 
 

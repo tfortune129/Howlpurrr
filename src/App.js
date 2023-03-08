@@ -13,7 +13,7 @@ import { useState } from 'react'
 
 export default function App() {
 
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
   // const [issignedOut, setIsSignedOut] = useState(false);
 
   const signIn = (user) => {
@@ -57,7 +57,7 @@ useEffect(()=> {
         <Routes>
 
           <Route path="/" element={<Home />} />
-          <Route path="/pet" element={<Pet />} />
+          <Route path="/pet" element={<Pet user={user} />} />
           <Route path="/me" element={<Myprofile />} />
           <Route path="/signin" element={<Signin signIn={signIn} />} />
           <Route path="/signup" element={<Signup />} />

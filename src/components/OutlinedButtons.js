@@ -4,16 +4,25 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export default function OutlinedButtons() {
+export default function OutlinedButtons({user}) {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const pet_name = e.target.pet_name.value;
         const birth_date = e.target.birth_date.value;
         const pet_weight = e.target.pet_weight.value;
-        const pet_gender = e.target.pet_gender.value;
-        const pet_type = e.target.pet_type.value;
-        const pet_breed = e.target.pet_breed.value;
+        let pet_gender = 'other';
+        pet_gender = e.target.pet_gender.value;
+        // e.target.pet_gender.value ? let pet_gender = e.target.pet_gender.value: let pet_gender = "Other";
+        // const pet_gender = e.target.pet_gender.value;
+
+        // const pet_type = e.target.pet_type.value;
+        let pet_type = 'other';
+        // pet_type = e.target.pet_type.value;
+        // console.log(e.target.pet_type.value);
+        // const pet_breed = e.target.pet_breed.value;
+        let pet_breed = 'other';
+        // pet_breed = e.target.pet_breed.value;
         const unique_id = e.target.unique_id.value;
         const pet_picture = e.target.pet_picture.value;
         
@@ -36,7 +45,8 @@ export default function OutlinedButtons() {
             method: 'POST',
             body: JSON.stringify(reqBody),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.apitoken}`
             }
         }
 
@@ -53,6 +63,8 @@ export default function OutlinedButtons() {
 
 
     return (
+
+        
 
         <div style={{ display: 'flex', justifyContent: 'center' }}>
 
@@ -95,25 +107,25 @@ export default function OutlinedButtons() {
                                 </div>
 
                                 &nbsp;
-                                <div name='pet_gender' className="col-md-8 mb-4">
+                                <div className="col-md-8 mb-4">
 
                                     <h6 className="mb-2 pb-1">Gender: </h6>
 
                                     <div className="form-check form-check-inline">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                                            value="option1" />
+                                        <input className="form-check-input" type="radio" name="pet_gender" id="femaleGender"
+                                            value="female" />
                                         <label className="form-check-label2" for="femaleGender">female</label>
                                     </div>
 
                                     <div className="form-check form-check-inline">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                                            value="option2" />
+                                        <input className="form-check-input" type="radio" name="pet_gender" id="maleGender"
+                                            value="male" />
                                         <label className="form-check-label2" for="maleGender">male</label>
                                     </div>
 
                                     <div className="form-check form-check-inline">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                                            value="option3" />
+                                        <input className="form-check-input" type="radio" name="pet_gender" id="otherGender"
+                                            value="other" />
                                         <label className="form-check-label2" for="otherGender">other</label>
                                     </div>
                                 </div>

@@ -94,7 +94,8 @@ export default function BreedDropdown() {
                     }
                 </div>
             </div>
-            
+            {/*pass in breed to outline
+            set breed and type to other for now */}
         </>
     )
 
