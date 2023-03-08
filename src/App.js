@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
 import Myprofile from './Myprofile'
@@ -14,33 +14,41 @@ import { useState } from 'react'
 export default function App() {
 
   const [user, setUser] = useState([]);
+  // const [issignedOut, setIsSignedOut] = useState(false);
 
   const signIn = (user) => {
-    // localStorage.setItem('user', JSON.stringify(user))
+    localStorage.setItem('user', JSON.stringify(user))
     console.log(user)
     setUser(user)
   }
 
+ const signOut = () => {
+    // console.log(user.length === 0 ? 'User logged out' : 'User did not log out');
+    localStorage.removeItem('user')
+    setUser({})
+    // setIsSignedOut(true);
+    console.log(user);
+  }
 
+
+useEffect(()=> {
+  // store user in local storage:
+  const userString = localStorage.getItem('user');
+  if (userString) {
+    const user = JSON.parse(userString);
+    setUser(user);
+  }
+}, [])
 
   // let first_name = user.first_name;
 
   let first_name = '';
   if (user.length > 0) {
     first_name = user.first_name;
-  } else {
-    console.log('User logged out successfully'); // add this line to log a message to the console
-  }
-
-  const signOut = () => {
-    // console.log(user.length === 0 ? 'User logged out' : 'User did not log out');
-
-    setUser({})
-    console.log(user);
-  }
-
+  } 
 
   return (
+    
 
     <BrowserRouter>
       <div>

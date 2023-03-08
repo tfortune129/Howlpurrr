@@ -42,6 +42,7 @@ export default function Signup() {
         console.log(data);
         if (res.status === 200) {
             navigate('/signin');
+            console.log(data);;
         }
 
     };

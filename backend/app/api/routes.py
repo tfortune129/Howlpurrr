@@ -48,10 +48,23 @@ def getToken():
 
 
 
-@api.route('/api/pet')
+@api.route('/api/pet', methods=['POST'])
 def getPet():
-    pet = Pet.query.all()
+    data = request.json
+
+    pet_name = data['pet_name']
+    birth_date = data['birth_date']
+    pet_weight = data['pet_weight']
+    pet_gender = data['pet_gender']
+    pet_type = data['pet_type']
+    pet_breed = data['pet_breed']
+    unique_id = data['unique_id']
+    pet_picture = data['pet_picture']
+
+    pet = Pet(pet_name, birth_date, pet_weight, pet_gender, pet_type, pet_breed, unique_id, pet_picture)
     
+    pet.saveToDB()
+
     return {
         # pet = []
         # for p in pet:
@@ -59,11 +72,12 @@ def getPet():
         # list comprehension version of above:
         
         'status': 'ok',
+        'message': 'Pet successfully created',
         'pet': [p.to_dict() for p in pet],
-        'total pets': len(pet)
-
-       
+        'total pets': len(pet)       
     }
+
+
 
 # add details to pet like signup
 # do i need an api route for signin?
