@@ -24,7 +24,7 @@ export default class Nav extends Component {
         <div className="pos-f-t">
         <div className={this.state.collapsed?'collapse': 'collapse show'} id="navbarToggleExternalContent">  
           <div className="bg-secondary p-4" onClick={this.handleClick}>
-            <h4 className="text-white">welcome back!</h4>
+            <h4 className="text-white">welcome back, {this.props.user.first_name}!</h4>
             <span className="text-muted"></span>
             {/* make text muted names based on profile */}
             <div className="dropdown-divider mt-3"></div>
@@ -32,8 +32,24 @@ export default class Nav extends Component {
             <Link className="dropdown-item text-white" to="/pet">my pet's day to day</Link>
             <Link className="dropdown-item text-white" to="/calendar">calendar overview</Link>
             <Link className="dropdown-item text-white" to="/me">my profile</Link>
-            <Link className="dropdown-item text-white" to="signin">sign in</Link>
-            <Link className="dropdown-item text-white" to="signup">sign up</Link>
+
+            {
+            this.props.user.apitoken
+            ?
+            <>
+            <Link className="dropdown-item text-white" to="/signin" onClick={this.props.signOut} >sign out</Link>
+            {/* <p className='dropdown-item text-white'>hey there, {this.props.user.first_name}</p> */}
+        
+            </>
+            :
+            <>
+            <Link className="dropdown-item text-white" to="/signin">sign in</Link>
+            <Link className="dropdown-item text-white" to="/signup">sign up</Link>
+
+            </>
+
+            }
+
             
           </div>
         </div>

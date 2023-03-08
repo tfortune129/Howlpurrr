@@ -1,9 +1,21 @@
 from flask import Blueprint
 from ..models import Pet, User
 from flask import request
+from flask_cors import cross_origin
+from flask_httpauth import HTTPBasicAuth
+
+
 
 api = Blueprint('api', __name__)
+basic_auth = HTTPBasicAuth()
 
+@basic_auth.verify_password
+def verify_password(email, password):
+    user = User.query.filter_by(email=email).first()
+    if user:
+            if password == user.password:
+                 return user
+            
 
 @api.route('/api/signup', methods=['POST'])
 def getsignUp():
@@ -21,6 +33,17 @@ def getsignUp():
     return {
         'status': 'ok',
         'message': 'User successfully created'
+    }
+
+
+@api.route('/api/signin', methods=['POST'])
+@basic_auth.login_required
+def getToken():
+    user = basic_auth.current_user()
+    return {
+        'status': 'ok',
+        'message': 'User logged in successfully',
+        'user': user.to_dict()
     }
 
 

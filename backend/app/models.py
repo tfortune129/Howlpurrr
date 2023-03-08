@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, date, timedelta
+from secrets import token_hex
 # timedelta is good for converting dates to and from strings based on difference between two dates or times
 
 # instantiate database connection:
@@ -14,6 +15,7 @@ class User(db.Model):
     email = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String, nullable=False)
     profile_picture = db.Column(db.String)
+    apitoken = db.Column(db.String, nullable=True)
     # this is assuming that i'll be storing a file path or URL to user's profile picture (blueprint?)
     pet = db.relationship('Pet', backref='pet', lazy=True)
 
@@ -25,15 +27,21 @@ class User(db.Model):
         self.email = email
         self.password = password
         self.profile_picture = profile_picture
+        self.apitoken = token_hex(16)
 
     def saveToDB(self):
         db.session.add(self)
         db.session.commit()
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'email': self.email,
+            'apitoken': self.apitoken,
+        }
 
         
-
-
-    
+   
 class Pet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     pet_name = db.Column(db.String(45), nullable=False)
