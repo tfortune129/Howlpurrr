@@ -16,10 +16,12 @@ export default function App() {
   const [user, setUser] = useState([]);
 
   const signIn = (user) => {
-
+    // localStorage.setItem('user', JSON.stringify(user))
     setUser(user)
   }
-  const first_name = user.first_name;
+  
+  let first_name = user.first_name;
+  
   const signOut = () => {
 
     setUser()

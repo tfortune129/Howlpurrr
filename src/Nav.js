@@ -3,6 +3,8 @@ import './style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router';
 
 
 
@@ -20,11 +22,19 @@ export default class Nav extends Component {
   }
 
   render() {
+    if (this.state.signedOut) {
+      return <Navigate to="/signin" />
+    }
+
+    const welcomeMessage = this.props.user.apitoken
+    ? `welcome back, ${this.props.user.first_name}!`
+    : 'welcome!';
+    
     return (
         <div className="pos-f-t">
         <div className={this.state.collapsed?'collapse': 'collapse show'} id="navbarToggleExternalContent">  
           <div className="bg-secondary p-4" onClick={this.handleClick}>
-            <h4 className="text-white">welcome back, {this.props.user.first_name}!</h4>
+            <h4 className="text-white">{welcomeMessage}</h4>
             <span className="text-muted"></span>
             {/* make text muted names based on profile */}
             <div className="dropdown-divider mt-3"></div>
@@ -37,7 +47,9 @@ export default class Nav extends Component {
             this.props.user.apitoken
             ?
             <>
-            <Link className="dropdown-item text-white" to="/signin" onClick={this.props.signOut} >sign out</Link>
+            <Link className="dropdown-item text-white" to="/signin" onClick={() => {this.props.signOut(); this.setState({ signedOut: true });}} >
+              sign out
+              </Link>
             {/* <p className='dropdown-item text-white'>hey there, {this.props.user.first_name}</p> */}
         
             </>
@@ -79,3 +91,6 @@ export default class Nav extends Component {
 
 
 // replace signup button with logout button
+
+
+// h4: welcome back, {this.props.user.first_name}!
