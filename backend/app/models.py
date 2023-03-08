@@ -26,6 +26,10 @@ class User(db.Model):
         self.password = password
         self.profile_picture = profile_picture
 
+    def saveToDB(self):
+        db.session.add(self)
+        db.session.commit()
+
         
 
 
@@ -83,6 +87,11 @@ class Pet(db.Model):
             'user_id': self.user_id,
         }
 
+    def saveToDB(self):
+        db.session.add(self)
+        db.session.commit()
+
+
 class Calendar(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.Date, default=datetime.utcnow)
@@ -93,6 +102,10 @@ class Calendar(db.Model):
     def __init__(self, good_day, pet_id):
         self.good_day = good_day
         self.pet_id = pet_id
+    
+    def saveToDB(self):
+        db.session.add(self)
+        db.session.commit()
 
 
     # query pet id and specify dates when querying

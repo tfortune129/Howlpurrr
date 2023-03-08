@@ -1,7 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Signup() {
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const first_name = e.target.first_name.value;
@@ -19,8 +21,9 @@ export default function Signup() {
 
         }
 
+        console.log(reqBody);
 
-        const url = 'http://localhost:5000/api/signup'
+        const url = 'http://127.0.0.1:5000/api/signup'
         const options = {
             method: 'POST',
             body: JSON.stringify(reqBody),
@@ -37,6 +40,12 @@ export default function Signup() {
         const res = await fetch(url, options);
         const data = await res.json();
         console.log(data);
+        if (res.status === 200) {
+            navigate('/signin');
+        } else {
+            alert(data.message);
+        }
+
 
     };
 
