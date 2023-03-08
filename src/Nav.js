@@ -22,9 +22,9 @@ export default class Nav extends Component {
   }
 
   render() {
-    if (this.state.signedOut) {
-      return <Navigate to="/signin" />
-    }
+    // if (this.state.signedOut) {
+    //   return <Navigate to="/signin" />
+    // }
 
     const welcomeMessage = this.props.user.apitoken
     ? `welcome back, ${this.props.user.first_name}!`
@@ -47,7 +47,7 @@ export default class Nav extends Component {
             this.props.user.apitoken
             ?
             <>
-            <Link className="dropdown-item text-white" to="/signin" onClick={() => {this.props.signOut(); this.setState({ signedOut: true });}} >
+            <Link className="dropdown-item text-white" to="/signin" onClick={this.props.signOut}>
               sign out
               </Link>
             {/* <p className='dropdown-item text-white'>hey there, {this.props.user.first_name}</p> */}
@@ -94,3 +94,6 @@ export default class Nav extends Component {
 
 
 // h4: welcome back, {this.props.user.first_name}!
+
+
+// {() => {this.props.signOut(); this.setState({ signedOut: true });}}
