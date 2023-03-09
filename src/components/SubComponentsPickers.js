@@ -17,10 +17,12 @@ export default function SubComponentsPickers() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
+      <Grid container spacing={3} maxWidth='md'>
+        <Grid item xs={12} md={11}>
         {/* <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }} /> */}
-          <CalendarPicker date={date} onChange={(newDate) => setDate(newDate)} sx={{ width: 200, height: 200 }} />
+          <CalendarPicker date={date} onChange={(newDate) => setDate(newDate)} 
+          sx = {{color: 'white'}}
+           />
         </Grid>
         {/* <Grid item xs={12} md={6}>
           <MonthPicker
