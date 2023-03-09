@@ -11,7 +11,9 @@ export default function FloatingActionButtons() {
     return (
 
         <center>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;
+            <h1>today was:</h1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
 
             <Box sx={{
                 display: 'flex',
@@ -26,11 +28,11 @@ export default function FloatingActionButtons() {
       <Fab color="secondary" aria-label="edit">
         <EditIcon />
       </Fab> */}
-                <Fab variant="extended" sx={{mr: 2, background: 'green'}}>
-                    today was a good day
+                <Fab variant="extended" sx={{mr: 2, background: '#00e676', fontFamily:'inherit'}}>
+                    a good day
                 </Fab>
-                <Fab variant="extended" sx={{background: 'red'}}>
-                    today was a bad day
+                <Fab variant="extended" sx={{background: 'red', fontFamily:'inherit'}}>
+                    a bad day
                 </Fab>
                 {/* <Fab disabled aria-label="like">
                     <FavoriteIcon />

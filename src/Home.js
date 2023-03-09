@@ -19,8 +19,11 @@ export default class Home extends Component {
     this.setState({ clickedAvatar: avatarName })
   };
 
+
+  
   render() {
 
+    
     const { clickedAvatar } = this.state;
 
     return (
