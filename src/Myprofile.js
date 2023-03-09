@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllo } from '@fortawesome/free-brands-svg-icons';
+
 
 export default class Myprofile extends Component {
   render() {
@@ -12,7 +15,12 @@ export default class Myprofile extends Component {
       
       <center>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <h1>you're back :o</h1></center>
+        <h1>you're back <FontAwesomeIcon icon={faEllo} style={{ color: 'white' }}/>
+</h1>
+        
+        </center>
+
+
     )
   }
 }
