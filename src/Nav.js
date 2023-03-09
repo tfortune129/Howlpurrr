@@ -27,7 +27,7 @@ export default class Nav extends Component {
     // }
 
     const welcomeMessage = this.props.user.apitoken
-    ? `welcome back, ${this.props.user.first_name}!`
+    ? `welcome, ${this.props.user.first_name}!`
     : 'welcome!';
     
     return (

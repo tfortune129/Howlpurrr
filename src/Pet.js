@@ -18,7 +18,7 @@ export default class Pet extends Component {
 
 
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <OutlinedButtons user={this.props.user} />
+        {/* <OutlinedButtons user={this.props.user} /> */}
       </>
         
 
