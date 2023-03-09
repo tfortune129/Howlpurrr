@@ -8,7 +8,15 @@ import honeybee from './images/honeybee.png'
 
 
 export default class Home extends Component {
+ 
+  
+  handleAvatarClick = (avatarName) => {
+    const message = `You clicked the ${avatarName} avatar!`;
+    alert(message);
+  };
+
   render() {
+
     return (
         <center>
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -16,6 +24,7 @@ export default class Home extends Component {
             alt="Yona"
             src={yona}
             sx={{ width: 400, height: 400 }}
+            onClick={() => this.handleAvatarClick('Yona')}
             
            
           /> </a>
@@ -25,6 +34,7 @@ export default class Home extends Component {
             alt="Honeybee"
             src={honeybee}
             sx={{ width: 400, height: 400 }}
+            onClick={() => this.handleAvatarClick('Honeybee')}
             
            
           /></a>
