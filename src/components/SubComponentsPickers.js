@@ -10,14 +10,17 @@ import { CalendarPicker } from '@mui/x-date-pickers/CalendarPicker';
 // const minDate = dayjs('2020-01-01T00:00:00.000');
 // const maxDate = dayjs('2034-01-01T00:00:00.000');
 
+
+
 export default function SubComponentsPickers() {
-  const [date, setDate] = React.useState(dayjs('2023-02-28'));
+  const [date, setDate] = React.useState(dayjs().startOf('day'));
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          <CalendarPicker date={date} onChange={(newDate) => setDate(newDate)} />
+        {/* <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }} /> */}
+          <CalendarPicker date={date} onChange={(newDate) => setDate(newDate)} sx={{ width: 200, height: 200 }} />
         </Grid>
         {/* <Grid item xs={12} md={6}>
           <MonthPicker

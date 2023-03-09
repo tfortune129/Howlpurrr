@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import FloatingActionButtons from './components/FloatingActionButtons';
 import OutlinedButtons from './components/OutlinedButtons';
+
 
 export default class Pet extends Component {
   render() {
@@ -8,7 +10,17 @@ export default class Pet extends Component {
     
     return (
 
+
+      <>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <FloatingActionButtons />
+
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <OutlinedButtons user={this.props.user} />
+      </>
+        
 
 
     //     <div>
